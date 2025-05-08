@@ -73,8 +73,8 @@ input[type="radio"] {
 
 #next {
     position: fixed;
-    bottom: 95px;
-    right: 500px;
+    bottom: 45px;
+    /* right: 500px; */
     background-color: #9c5c86;
     color: white;
     border: none;
