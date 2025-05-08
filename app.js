@@ -34,7 +34,7 @@ const quizQuestions = [
     {
         question: 'The more you take, the more you leave behind. What am I?',
         opt1: 'Money',
-        opt2: 'Footdteps',
+        opt2: 'Footsteps',
         opt3: 'Time',
         opt4: 'Photos',
         correct: 'Footsteps',
@@ -57,7 +57,18 @@ let score = 0;
 
 function showQuestion() {
     if (quizQuestions.length == index) {
-        quizContainer.innerHTML = `<h1>Quiz Completed</h1><p>You scored ${score} out of ${quizQuestions.length}</p>`;
+        // quizContainer.innerHTML = `<h1>Quiz Completed</h1><h3>You scored ${score} out of ${quizQuestions.length}</h3>`;
+        if (score >= 5) {
+            quizContainer.innerHTML = `<h1>Quiz Completed</h1><h3>You scored ${score} out of ${quizQuestions.length} <br> Good Job!!</h3>`
+        }
+        else {
+            if (score <= 4 && score >= 2) {
+                quizContainer.innerHTML = `<h1>Quiz Completed</h1><h3>You scored ${score} out of ${quizQuestions.length} <br> You need to improve...</h3>`
+            }
+            else {
+                quizContainer.innerHTML = `<h1>Quiz Completed</h1><h3>You scored ${score} out of ${quizQuestions.length} <br> You failed, better luck next time.</h3>`
+            }
+        }
         nextBtn.style.display = 'none';
     } else {
         nextBtn.disabled = true;
